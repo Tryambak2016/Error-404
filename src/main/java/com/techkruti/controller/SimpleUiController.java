@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SimpleUiController {
 
+    @GetMapping("/home")
+    public String home() {
+        return "home";
+    }
     @GetMapping("/")
     public String index() {
         return "home";
@@ -24,6 +28,16 @@ public class SimpleUiController {
     @GetMapping("/contact")
     public String contact() {
         return "contact";
+    }
+
+    @GetMapping("/doctor")
+    public String doctor() {
+        return "doctor";
+    }
+
+    @GetMapping("/appointment")
+    public String appointment() {
+        return "appointment";
     }
 
 }

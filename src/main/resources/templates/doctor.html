@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Doctors</title>
-</head>
-<body>
-    <h2>Doctors List</h2>
-    <table border="1">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div th:insert="~{header :: header}"></div>
+    <h2 class="text-4xl font-medium px-20 my-8">Doctors List</h2>
+    <!-- <table border="1">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -29,6 +31,290 @@
         <label>Specialization:</label>
         <input type="text" th:field="*{specialization}" required><br>
         <button type="submit">Add Doctor</button>
-    </form>
-</body>
+    </form> -->
+    <div class="doctors w-full justify-center gap-4 flex flex-wrap">
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <a th:href="@{/appointment}">
+          <img
+            class="rounded-t-lg w-[100%]"
+            src="https://t3.ftcdn.net/jpg/06/64/62/08/360_F_664620894_KN7WA859syQPK6rwNWBSky1iLwYhb3Gt.jpg"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a th:href="@{/appointment}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              Dr. Bhagyashree Chepurwar
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Specialization : Cardiologist
+          </p>
+          <p class="mb-3 font-normal text-gray-700">
+            Expert cardiologist dedicated to heart health, offering advanced
+            care for prevention, diagnosis, and treatment of cardiovascular
+            conditions with compassion
+          </p>
+          <a
+            th:href="@{/appointment}"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Connect me
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <a th:href="@{/appointment}">
+          <img
+            class="rounded-t-lg w-[100%]"
+            src="https://static.vecteezy.com/system/resources/previews/028/534/357/non_2x/portrait-of-female-american-doctor-standing-in-hospital-copy-space-generative-ai-free-photo.jpeg"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a th:href="@{/appointment}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              Dr. Shejal Burele
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Specialization : Neurologist
+          </p>
+          <p class="mb-3 font-normal text-gray-700">
+            Expert cardiologist dedicated to heart health, offering advanced
+            care for prevention, diagnosis, and treatment of cardiovascular
+            conditions with compassion
+          </p>
+          <a
+            th:href="@{/appointment}"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Connect me
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <a th:href="@{/appointment}">
+          <img
+            class="rounded-t-lg w-[100%]"
+            src="https://t3.ftcdn.net/jpg/06/64/62/08/360_F_664620894_KN7WA859syQPK6rwNWBSky1iLwYhb3Gt.jpg"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a th:href="@{/appointment}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              Dr. Bhagyashree Chepurwar
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Specialization : Cardiologist
+          </p>
+          <p class="mb-3 font-normal text-gray-700">
+            Expert cardiologist dedicated to heart health, offering advanced
+            care for prevention, diagnosis, and treatment of cardiovascular
+            conditions with compassion
+          </p>
+          <a
+            th:href="@{/appointment}"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Connect me
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <a th:href="@{/appointment}">
+          <img
+            class="rounded-t-lg w-[100%]"
+            src="https://static.vecteezy.com/system/resources/previews/028/534/357/non_2x/portrait-of-female-american-doctor-standing-in-hospital-copy-space-generative-ai-free-photo.jpeg"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a th:href="@{/appointment}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              Dr. Shejal Burele
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Specialization : Neurologist
+          </p>
+          <p class="mb-3 font-normal text-gray-700">
+            Expert cardiologist dedicated to heart health, offering advanced
+            care for prevention, diagnosis, and treatment of cardiovascular
+            conditions with compassion
+          </p>
+          <a
+            th:href="@{/appointment}"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Connect me
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <a th:href="@{/appointment}">
+          <img
+            class="rounded-t-lg w-[100%]"
+            src="https://t3.ftcdn.net/jpg/06/64/62/08/360_F_664620894_KN7WA859syQPK6rwNWBSky1iLwYhb3Gt.jpg"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a th:href="@{/appointment}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              Dr. Bhagyashree Chepurwar
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Specialization : Cardiologist
+          </p>
+          <p class="mb-3 font-normal text-gray-700">
+            Expert cardiologist dedicated to heart health, offering advanced
+            care for prevention, diagnosis, and treatment of cardiovascular
+            conditions with compassion
+          </p>
+          <a
+            th:href="@{/appointment}"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Connect me
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm"
+      >
+        <a th:href="@{/appointment}">
+          <img
+            class="rounded-t-lg w-[100%]"
+            src="https://static.vecteezy.com/system/resources/previews/028/534/357/non_2x/portrait-of-female-american-doctor-standing-in-hospital-copy-space-generative-ai-free-photo.jpeg"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a th:href="@{/appointment}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              Dr. Shejal Burele
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Specialization : Neurologist
+          </p>
+          <p class="mb-3 font-normal text-gray-700">
+            Expert cardiologist dedicated to heart health, offering advanced
+            care for prevention, diagnosis, and treatment of cardiovascular
+            conditions with compassion
+          </p>
+          <a
+            th:href="@{/appointment}"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Connect me
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

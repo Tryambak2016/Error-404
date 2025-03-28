@@ -2,38 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Book Appointment</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <h2>Book an Appointment</h2>
-    <form th:action="@{/appointments/book}" method="post" th:object="${newAppointment}">
-        <label>Patient:</label>
-        <select th:field="*{patient}">
-            <option th:each="patient : ${patients}" th:value="${patient.id}" th:text="${patient.name}"></option>
-        </select>
-
-        <label>Doctor:</label>
-        <select th:field="*{doctor}">
-            <option th:each="doctor : ${doctors}" th:value="${doctor.id}" th:text="${doctor.name}"></option>
-        </select>
-
-        <label>Appointment Time:</label>
-        <input type="datetime-local" th:field="*{appointmentTime}" />
-
-        <button type="submit">Book</button>
+    <div th:insert="~{header :: header}"></div>
+    <div class="bg-gray-100 flex flex-col items-center justify-center min-h-screen gap-8">
+    <h2 class="text-4xl text-[#1447E6]">Book an Appointment</h2>
+   
+    <form th:action="@{https://api.web3forms.com/submit}" method="post" th:object="${newAppointment}" class="w-100 mx-auto bg-white p-8 rounded-lg shadow-md">
+        <input type="hidden" name="access_key" value="0938a21c-94c9-4479-8399-3c2f6494e92b">
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Patient:</label>
+            <input type="text" 
+                   class="w-full p-3 text-gray-800 rounded-lg border border-gray-200" 
+                   placeholder="Enter patient name" name="Patient:" required>
+        </div>
+    
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Doctor:</label>
+            <input type="text" 
+                   class="w-full p-3 text-gray-800 rounded-lg border border-gray-200" 
+                   placeholder="Enter doctor name" name="Doctor:" required>
+        </div>
+    
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Appointment Time:</label>
+            <input type="datetime-local" 
+                   class="w-full p-3 text-gray-800 rounded-lg border border-gray-200" name="Appointment Time:"
+                    required>
+        </div>
+    
+        <button type="submit" 
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+            Book Appointment
+        </button>
     </form>
-
-    <h2>Appointments</h2>
-    <table>
-        <tr>
-            <th>Patient</th>
-            <th>Doctor</th>
-            <th>Time</th>
-        </tr>
-        <tr th:each="appointment : ${appointments}">
-            <td th:text="${appointment.patient.name}"></td>
-            <td th:text="${appointment.doctor.name}"></td>
-            <td th:text="${appointment.appointmentTime}"></td>
-        </tr>
-    </table>
+</div>
 </body>
 </html>

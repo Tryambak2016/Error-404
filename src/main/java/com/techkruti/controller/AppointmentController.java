@@ -18,21 +18,27 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/appointments")
 @RequiredArgsConstructor
 public class AppointmentController {
-    
+
     private final AppointmentService appointmentService;
-    
-    
+
     private final PatientService patientService;
-    
-  
+
     private final DoctorService doctorService;
 
-    @GetMapping
-    public String showAppointments(Model model) {
-        model.addAttribute("appointments", appointmentService.getAllAppointments());
+    // @GetMapping
+    // public String showAppointments(Model model) {
+    //     model.addAttribute("appointments", appointmentService.getAllAppointments());
+    //     model.addAttribute("patients", patientService.getAllPatients());
+    //     model.addAttribute("doctors", doctorService.getAllDoctors());
+    //     model.addAttribute("newAppointment", new Appointment());
+    //     return "appointment";
+    // }
+
+    @GetMapping("/templates/appointment.html")
+    public String showAppointmentForm(Model model) {
+        model.addAttribute("newAppointment", new Appointment());
         model.addAttribute("patients", patientService.getAllPatients());
         model.addAttribute("doctors", doctorService.getAllDoctors());
-        model.addAttribute("newAppointment", new Appointment());
         return "appointment";
     }
 
@@ -42,4 +48,3 @@ public class AppointmentController {
         return "redirect:/appointments";
     }
 }
-

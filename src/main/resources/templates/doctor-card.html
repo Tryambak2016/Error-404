@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <!-- Doctor Card Fragment with Tailwind -->
+    <div th:fragment="doctorCard(imageUrl, name, description)" 
+         class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
+        <div class="h-48 overflow-hidden">
+            <img th:src="${imageUrl}" 
+                 alt="Doctor Image" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div class="px-6 py-4">
+            <h3 class="font-bold text-xl mb-2 text-gray-800" th:text="${name}">Doctor Name</h3>
+            <p class="text-gray-600 text-base" th:text="${description}">
+                Doctor description goes here
+            </p>
+        </div>
+        <div class="px-6 pt-2 pb-4">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors duration-300">
+                View Profile
+            </button>
+        </div>
+    </div>
+</body>
+</html>
